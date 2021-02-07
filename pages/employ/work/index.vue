@@ -3,7 +3,7 @@
 		<h2>งาน</h2>
 		<a-input 
 			class="boxInput"
-			placeholder="ลำดับงาน*"    
+			placeholder="ชื่อ Project*"    
 			v-model="form.taskName"
 		/>
 
@@ -11,7 +11,7 @@
 		<a-date-picker 
 			class="boxDate"
 			@change="onChange"
-			placeholder="กำหนดส่ง*"
+			placeholder="กำหนดส่ง Project*"
 			v-model="form.date"
 		/>
 
@@ -49,27 +49,37 @@
 				v-model="taskList.date"/>
 			</div>
         </div>
-        <button 
-			class="btn btn-green btn-size" 
-			@click="addList()"
-			>เพิ่มลิส
-		</button>
-		<div class="box" v-for="(item,index) in form.tasks" :key="index">
+		<div class="div-list">
+			<button 
+				class="btn btn-green btn-size-list" 
+				@click="addList()"
+				>เพิ่มลิส
+			</button>
+		</div>
+        
+		<div class="box-list" v-for="(item,index) in form.tasks" :key="index">
+			<div class="div-delete">
+				<a-icon 
+					type="close"
+					v-on:click="remove(index)"
+				/>
+			</div>
 			<div class="topic" >
-				<h2>{{index+1}}</h2>
-				<h2>{{item.name}}</h2>
+				<h2>{{index+1}}. {{item.name}}</h2>
 			</div>
 			<div class="topic">
-				<h3>กำหนดส่ง :</h3>
-				<h3>{{item.date}}</h3>
+				<h3>กำหนดส่ง : {{item.date}}</h3>
 			</div>
-	   		<button v-on:click="remove(index)">ลบ</button>
 		</div>
-		<button 
-			class="btn btn-green" 
-			@click="addWork()"
-			>เพิ่มงาน
-		</button>
+		<br>
+		<div class="div-add">
+			<button 
+				class="btn btn-green btn-size-add" 
+				@click="addWork()"
+				>เพิ่มงาน
+			</button>
+		</div>
+		
 	</div>
 </template>
 <script>
@@ -123,15 +133,41 @@ export default {
 }
 </script>
 <style scope>
-.btn-size{
+.btn{
+	font-size: 12px;
+}
+.btn-size-list{
 	width: 50px;
 	height: 26px;
+	margin: 0 0 28px 0;
+}
+.div-list{
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 24px;
+}
+.div-add{
+	display: flex;
+	justify-content: center;
+}
+.div-delete{
+	display: flex;
+	justify-content: flex-end;
+}
+.btn-size-add{
+	width: 180px;
+	height: 32px;
 }
 .boxDate{
 	width: 150px;
 }
 .box{
 	padding: 24px 24px 14px 24px;
+}
+.box-list{
+	padding: 16px 18px;
+	box-shadow: 4px 4px 8px rgb(229,229,229);
+	margin: 0 0 20px 0;
 }
 .topic{
 	

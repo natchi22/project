@@ -2,27 +2,41 @@
 	<div class="body">
         <div class="cover">
                 <!-- <img class="pic size-pic" :src="profile.pictureUrl" alt="รูปโปรไฟล์">  ชื่อไฟล์.ตัวที่เอาไปเก็บ -->
+            <nuxt-link to="/employ/profile/profile"> 
                 <img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+            </nuxt-link>
         </div>
         <div class="head">
-            <h2>{{fName}}</h2>
-            <h2>{{lName}}</h2>
+            <h2>{{fName}} {{lName}}</h2>
+            <nuxt-link to="/employ/profile/edit">
+                <a-icon 
+                    type="edit" 
+                    :style="{ color: '#E5E5E5' }"
+                />
+            </nuxt-link>
         </div>
-        <!-- <CellBoxTask/> -->
-        <div class="box">
-            <h1>{{nameTask}}</h1>
-            <div class="dateTask">
-                <h2 class="topic">เริ่ม :</h2>
-                <h2>{{dateStart}}</h2>
+        <nuxt-link to="/employ/work/stepwork">
+            <div class="box">
+                <h1>{{nameTask}}</h1>
+                <div class="dateTask">
+                    <h2 class="topic">เริ่ม :</h2>
+                    <h2>{{dateStart}}</h2>
+                </div>
+                <div class="dateTask">
+                    <h2 class="topic">สิ้นสุด :</h2>
+                    <h2>{{dateEnd}}</h2>
+                </div>
+                <div >
+                    <h3>ความสำเร็จตามแผน</h3>
+                    <a-progress :percent="50" status="active" />
+                </div>
+                <div >
+                    <h3>ความสำเร็จปัจจุบัน</h3>
+                    <a-progress :percent="50" status="active" />
+                </div>
             </div>
-            <div class="dateTask">
-                <h2 class="topic">สิ้นสุด :</h2>
-                <h2>{{dateEnd}}</h2>
-            </div>
-            <div >
-                <a-progress :percent="50" status="active" />
-            </div>
-	    </div>
+        </nuxt-link> 
+
         <nuxt-link to="/employ/work">
             <button class="btn btn-green" @click="summit">เพิ่มงาน</button>
         </nuxt-link>
@@ -71,6 +85,7 @@ h1{
 }
 .head{
     display: flex;
+    margin: 0 0 20px 0;
 }
 .btn{
     width: 180px;

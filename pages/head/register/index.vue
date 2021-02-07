@@ -30,6 +30,14 @@ export default {
 			telNumber: '',
         }
     },
+    methods:{
+        async register() {
+            register();
+            
+
+        }
+        
+    }
 }
 </script>
 <style scoped>

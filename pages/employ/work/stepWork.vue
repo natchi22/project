@@ -16,12 +16,20 @@
             </div>
             
         </div>
+        <h2>ความสำเร็จตามแผน</h2>
         <a-progress 
             :percent="50" 
             status="active" 
             class="progress"
         />
-        <div class="status">
+        <h2>ความสำเร็จปัจจุบัน</h2>
+        <a-progress 
+            :percent="60" 
+            status="active" 
+            class="progress"
+        />
+        <!-- ถ้างานที่ส่งตรวจผ่านแล้ว แสดงช่องนี้ -->
+        <div class="status"> 
             <div class="top-succeed">
                 <h2>ชื่อstep</h2>
                 <div class="btn-status btn-succeed">
@@ -49,6 +57,7 @@
                 <h3 class="detail">{{commentTask}}</h3>
             </div>
         </div>
+        <!-- งานที่ยังไม่ได้ส่ง แสดงช่องนี้ -->
         <div class="status">
             <div class="top-succeed">
                 <h2>ชื่อstep</h2>
