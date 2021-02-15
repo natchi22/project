@@ -7,46 +7,7 @@
         <div class="task-name">
             <h1>{{form.taskName}}</h1>
         </div>    
-        <!-- ถ้างานที่ส่งตรวจผ่านแล้ว แสดงช่องนี้ -->
-        <div class="status">
-            <div class="employ-name">
-                <img class="pic size-pic-employ" src="../../../../assets/images/profile.jpg" alt="รูปโปรไฟล์พนักงานที่ส่งงาน">
-                <h1>{{employ.fName}} {{employ.lName}}</h1>
-            </div>
-            <div class="top-succeed">
-                <h2>{{index}}{{taskList.name}}</h2>
-                
-            </div>
-            <div class="box-status">
-                <div class="box-date">
-                    <a-icon 
-                        type="clock-circle" 
-                        :style="{ fontSize: '14px', color: '#ffffff' }"
-                    />
-                    <h3>{{taskList.date}}</h3>
-                </div>
-                <div class="btn-status btn-succeed">
-                    <h3>ตรวจแล้ว</h3>
-                </div>
-            </div>
-            <div class="main">
-                <h3 class="topic">แนบงาน</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{urlTask}}</h3>
-            </div>
-            <div class="main">
-                <h3 class="topic">รายละเอียด</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{detailTask}}</h3>
-            </div>
-            <hr>
-            <div class="main">
-                <h3 class="topic">ความคิดเห็น</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{commentTask}}</h3>
-            </div>
-        </div>
-        <!-- งานที่ยังไม่ได้ส่ง แสดงช่องนี้ -->
+        <!-- งานที่กำลังตรวจ แสดงช่องนี้ -->
         <div class="status">
             <div class="employ-name">
                 <img class="pic size-pic-employ" src="../../../../assets/images/profile.jpg" alt="รูปโปรไฟล์พนักงานที่ส่งงาน">
@@ -78,7 +39,27 @@
                 <h3>:</h3>
                 <h3>{{detailTask}}</h3>
             </div>
-            
+            <div class="main">
+                <h3 class="topic">ความคิดเห็น</h3>
+                <h3>:</h3>
+                <a-textarea 
+                    class="boxInput"
+                    placeholder="กรอกความคิดเห็น*" 
+                    :rows="4" 
+                />
+            </div>
+            <div class="btn-check">
+                <button 
+                    v-on:click="check()"
+                    class="btn btn-green btn-size"
+                >ยืนยัน
+                </button>
+                <button 
+                    v-on:click="check()"
+                    class="btn btn-green btn-size"
+                >แก้ไข
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -141,10 +122,20 @@ export default {
 	margin: 0 24px 0 0;
 }
 /* กรอบตรวจแล้ว อยู่style*/
+.status{
+    margin: 0 32px;
+}
 /* div ชื่อคนในกรอบงานตรวจ */
 .employ-name{
     display: flex;
     justify-content: center;
     margin: 0 0 8px 0;
+}
+/* div ปุ่ม ตรวจ */
+.btn-check{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 </style>

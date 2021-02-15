@@ -8,7 +8,7 @@
                         type="clock-circle" 
                         :style="{ fontSize: '24px', color: '#ffffff' }"
                     />
-                    <h2>16/04/1998</h2>
+                    <h2>{{form.date}}</h2>
                 </div>
             </div>
             <div>
@@ -31,15 +31,20 @@
         <!-- ถ้างานที่ส่งตรวจผ่านแล้ว แสดงช่องนี้ -->
         <div class="status"> 
             <div class="top-succeed">
-                <h2>ชื่อstep</h2>
+                <h2>1.ชื่อstep</h2>
+                
+            </div>
+            <div class="box-status">
+                <div class="box-date">
+                    <a-icon 
+                        type="clock-circle" 
+                        :style="{ fontSize: '14px', color: '#ffffff' }"
+                    />
+                    <h3>{{taskList.date}}</h3>
+                </div>
                 <div class="btn-status btn-succeed">
                     <h3>ตรวจแล้ว</h3>
                 </div>
-            </div>
-            <div class="main">
-                <h3 class="topic">กำหนดส่ง</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{taskList.date}}</h3>
             </div>
             <div class="main">
                 <h3 class="topic">แนบงาน</h3>
@@ -51,6 +56,7 @@
                 <h3>:</h3>
                 <h3 class="detail">{{detailTask}}</h3>
             </div>
+            <hr>
             <div class="main">
                 <h3 class="topic">ความคิดเห็น</h3>
                 <h3>:</h3>
@@ -60,25 +66,37 @@
         <!-- งานที่ยังไม่ได้ส่ง แสดงช่องนี้ -->
         <div class="status">
             <div class="top-succeed">
-                <h2>ชื่อstep</h2>
-                <div class="btn-status btn-wait">
-                    <h3>รอตรวจ</h3>
+                <h2>2.ชื่อstep</h2>
+                
+            </div>
+            <div class="box-status">
+                <div class="box-date">
+                    <a-icon 
+                        type="clock-circle" 
+                        :style="{ fontSize: '14px', color: '#ffffff' }"
+                    />
+                    <h3>{{taskList.date}}</h3>
                 </div>
+                <div class="btn-status btn-wait">
+                <h3>รอตรวจ</h3>
             </div>
-            <div class="main">
-                <h3 class="topic">กำหนดส่ง</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{taskList.date}}</h3>
             </div>
+            
             <div class="main">
                 <h3 class="topic">แนบงาน</h3>
                 <h3>:</h3>
-                <a-input 
-                    class="boxInput"
-                    placeholder="URL*"    
-
-                />
+                <a-upload
+                    class="upload"
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    :default-file-list="defaultFileList"
+                    >
+                    <a-button> 
+                        <a-icon 
+                            type="upload" /> Upload 
+                    </a-button>
+                </a-upload>
             </div>
+            
             <div class="main">
                 <h3 class="topic">รายละเอียด</h3>
                 <h3>:</h3>
@@ -87,11 +105,6 @@
                     placeholder="รายละเอียดงาน*" 
                     :rows="4" 
                 />
-            </div>
-            <div class="main">
-                <h3 class="topic">ความคิดเห็น</h3>
-                <h3>:</h3>
-                <h3 class="detail">{{commentTask}}</h3>
             </div>
             <div class="btn-check">
                 <button 
@@ -128,13 +141,13 @@ export default {
 			dateFormatList: ['DD/MM/YYYY', 'DD/MM/YY'],
 			form:{
 				taskName: 'งานขึ้นบ้านใหม่',
-				date: null,
+				date: '01/01/2021',
 				manager: null,
 				tasks: []
 			},
 			taskList: {
 				name: null,
-				date: 'null'
+				date: '16/01/2021'
             },
             urlTask:'URLงานที่แนบมา',
             detailTask:'รายละเอียดการทำงานชิ้นนี้รายละเอียดการทำงานชิ้นนี้รายละเอียดการทำงานชิ้นนี้',
@@ -168,6 +181,7 @@ export default {
     justify-content: space-between;
     padding: 0 0 24px 0;
 }
+/* กรอบวันที่ใหญ่ */
 .boxTime{
     display: flex;
     flex-direction: row;
@@ -184,58 +198,6 @@ h2{
 .progress{
     margin: 0 0 20px 0;
 }
-/* กรอบตรวจแล้ว */
-.status{
-    box-shadow: 4px 4px 8px rgb(229,229,229);
-    padding: 16px 18px 12px 18px;
-    margin: 0 0 20px 0;
-}
-.top-succeed{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    margin: 0 0 2px 0;
-}
-.btn-status{
-    border-radius: 4px;
-    width: 80px;
-    height: 20px;
-}
-.btn-succeed{
-    background-color: #0BB807;
-}
-.btn-wait{
-    background-color: #FFB524;
-}
-.btn-status h3{
-    color: #ffffff;
-    text-align: center;
-}
-.main{
-    display: flex;
-    flex-direction: row;
-    padding: 6px 0;
-}
-.topic{
-    width: 80px;
-    
-}
-.detail{
-    width: 200px;
-    margin: 0 0 0 5px;
-}
-.boxInput{
-    width: 80%;
-    margin: 0 0 0 5px;
-}
-.btn-size{
-    width: 80px;
-    height: 20px;
-    font-size: 12px;
-}
-.btn-check{
-    display: flex;
-    justify-content: center;
-}
+/* กรอบตรวจแล้ว อยู่style*/
+
 </style>
