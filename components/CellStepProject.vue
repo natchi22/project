@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div>
-                <img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+                <img class="pic size-pic" src="../assets/images/profile.jpg" alt="รูปโปรไฟล์">
             </div>
             
         </div>
