@@ -1,7 +1,10 @@
 <template>
     <div class="body">
 		<div class="profile-head">
-			<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+			<!-- กดรูปดูโปรไฟล์ -->
+			<nuxt-link to="/employ/profile">
+				<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+			</nuxt-link>
 			<h2>ชื่อหัวหน้า งาน</h2>
 		</div>
 		<div class="tabs">

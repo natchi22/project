@@ -5,17 +5,27 @@
 			<h2>ชื่อหัวหน้าใหญ่ เจ้าของ</h2>
 		</div>
 		<div class="tabs">
+			<a-alert
+                message="งานขึ้นบ้านใหม่"
+                description="ช้ากว่ากำหนดแล้ว"
+                type="warning"
+                show-icon
+                closable
+                @close="onClose"
+                class="alert"
+            />
 			<a-tabs type="card" @change="callback">
-				<a-tab-pane key="1" tab="ตรวจงาน">
+				<a-tab-pane key="1" tab="Project">
 					<div class="box">
-						<h1>{{ชื่องาน}}</h1>
+						<h1>{{form.taskName}}</h1>
+						<div class="manager">
+							<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+							<h3>{{form.manager}}</h3>
+						</div>
+						
 					</div>
 				</a-tab-pane>
-				<a-tab-pane key="2" tab="รายชื่อ">
-					<div class="box">
-						<h1>{{ชื่อพนักงาน}}</h1>
-					</div>
-				</a-tab-pane>
+
        		</a-tabs>
 		</div>
         
@@ -27,7 +37,15 @@
 export default {
   	data() {
     	return {
-            
+            form:{
+				taskName: 'งานขึ้นบ้านใหม่', //ชื่องานที่หัวหน้าคนนี้งานดูแลทั้งหมด
+				date: null,
+				manager: 'ชื่อหัวหน้า',
+				tasks: []
+            },
+            //ชื่อพนักงานที่หัวหน้าคนนี้ดูแลทั้งหมด
+            fName: 'จิรัชญา',
+            lName: 'นวลแก้ว',
         };
   	},
   	methods: {
@@ -58,6 +76,9 @@ export default {
     box-shadow: 4px 4px 8px rgb(229,229,229);
     padding: 24px;
     margin: 0 0 20px 0;
+}
+.manager{
+	display: flex;
 }
 </style>
 <style>

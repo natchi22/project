@@ -90,18 +90,20 @@ input{
 .btn-green{
     background: #3ABCA7;
 }
-.btn-red{
-    background: #E76E54;
+.btn-white{
+    background: #FFFFFF;
+    color: #000000;
+    border: 1px solid  #3ABCA7;
 }
 .btn-green:active{
     background: #FFFFFF;
     color: #3ABCA7;
     border: 1px solid  #3ABCA7;
 }
-.btn-red:active{
-    background: #FFFFFF;
-    color: #E76E54;
-    border: 1px solid  #E76E54;
+.btn-white:active{
+    background: #3ABCA7;
+    color: #FFFFFF;
+    
 }
 /* ปุ่ม */
 

@@ -11,7 +11,7 @@
             <nuxt-link to="/employ/profile/edit">
                 <a-icon 
                     type="edit" 
-                    :style="{ color: '#E5E5E5' }"
+                    :style="{ color: '#555555' }"
                 />
             </nuxt-link>
         </div>
