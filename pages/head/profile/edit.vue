@@ -11,10 +11,12 @@
         <input type="text" placeholder="E-mail*" v-model="email">
         <h2>Password</h2>
         <input type="text" placeholder="Password*" v-model="password">
-        <div class="div-btn">
-        
+        <!-- บันทึกข้้อมูลส่วนตัว ไปหน้าแรก ของตัวเอง -->
+        <nuxt-link to="/head/profile/boss">
+            <div class="div-btn">
                 <button class="btn btn-green" @click="summit">บันทึก</button>
-        </div> 
+            </div> 
+        </nuxt-link>
 	</div>
 </template>
 <script>

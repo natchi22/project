@@ -1,7 +1,9 @@
 <template>
     <div class="body">
 		<div class="profile-head">
-			<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+			<nuxt-link to="/head/profile">
+				<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+			</nuxt-link>
 			<h2>ชื่อหัวหน้าใหญ่ เจ้าของ</h2>
 		</div>
 		<div class="tabs">
@@ -20,7 +22,7 @@
 						<h1>{{form.taskName}}</h1>
 						<div class="manager">
 							<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
-							<h3>{{form.manager}}</h3>
+							<h3>{{form.manager}} {{form.manager}}(ชื่อ สกุล)</h3>
 						</div>
 						
 					</div>
