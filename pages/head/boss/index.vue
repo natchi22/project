@@ -18,14 +18,16 @@
             />
 			<a-tabs type="card" @change="callback">
 				<a-tab-pane key="1" tab="Project">
-					<div class="box">
-						<h1>{{form.taskName}}</h1>
-						<div class="manager">
-							<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
-							<h3>{{form.manager}} {{form.manager}}(ชื่อ สกุล)</h3>
+					<nuxt-link to="/head/boss/checkEmploy">
+						<div class="box">
+							<h1>{{form.taskName}}</h1>
+							<div class="manager">
+								<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+								<h3>{{form.manager}} {{form.manager}}(ชื่อ สกุล)</h3>
+							</div>
+							
 						</div>
-						
-					</div>
+					</nuxt-link>
 				</a-tab-pane>
 
        		</a-tabs>

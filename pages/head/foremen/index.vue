@@ -19,20 +19,24 @@
             />
 			<a-tabs type="card" @change="callback">
 				<a-tab-pane key="1" tab="ตรวจงาน">
-					<div 
-                        class="box" 
-                        v-for=""
-                    > 
-						<h1>{{form.taskName}}</h1>
-					</div>
+					<nuxt-link to="/pages/head/foremen/checkProject">	
+						<div 
+							class="box" 
+							v-for=""
+						> 
+							<h1>{{form.taskName}}</h1>
+						</div>
+					</nuxt-link>
 				</a-tab-pane>
 				<a-tab-pane key="2" tab="รายชื่อ">
+				<nuxt-link to="/head/foremen/checkEmploy">	
 					<div 
                         class="box"
                         v-for=""
                     >
 						<h1>{{fName}} {{lName}}</h1>
 					</div>
+				</nuxt-link>
 				</a-tab-pane>
        		</a-tabs>
 		</div>
