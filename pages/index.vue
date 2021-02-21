@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        หน้าแรก รอต่อLine
+        หน้าแรก ต่อLine
       </h1>
       <div class="links">
         <a
@@ -61,7 +61,7 @@ export default {
      	name : this.name
 	}
 	
-    liff.init({ liffId: '1654989800-V2XxzW4z' })
+    liff.init({ liffId: '1655688087-NzP8r7n2' })
       	.then(() => {
         	if (liff.isLoggedIn()) {
 				const queryString = decodeURIComponent(window.location.search).replace("?liff.state=", "")
@@ -109,11 +109,11 @@ export default {
 					}
 				}
 				else if (params.get('page') === 'profile'){
-					this.$router.replace('/freelance/profile')
+					this.$router.replace('/employ/project')
 				}
-				else if (params.get('page') === 'history'){
-					this.$router.replace('/freelance/history')
-				} 
+				// else if (params.get('page') === 'history'){
+				// 	this.$router.replace('/freelance/history')
+				// } 
           		})
        		}
         	else{
