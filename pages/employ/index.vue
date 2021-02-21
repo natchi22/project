@@ -19,7 +19,16 @@
 	    </div>
 	</div>
 </template>
-
+<script>
+import { mapState,mapMutations } from 'vuex'
+export default {
+    computed: { //นำstoreไปใช้ วางไว้หน้าที่จะใช้ และเรียกใช้บนโค้ด **import mapState ด้วย   
+		...mapState({
+		profile: state => state.profile.profileData
+    })
+    },
+}
+</script>
 <style scoped>
 h1{
 	font-size: 24px;
