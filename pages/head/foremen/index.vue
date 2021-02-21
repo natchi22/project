@@ -19,7 +19,7 @@
             />
 			<a-tabs type="card" @change="callback">
 				<a-tab-pane key="1" tab="ตรวจงาน">
-					<nuxt-link to="/pages/head/foremen/checkProject">	
+					<nuxt-link to="/head/foremen/checkProject">	
 						<div 
 							class="box" 
 							v-for=""
