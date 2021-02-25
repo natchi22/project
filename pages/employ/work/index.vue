@@ -35,24 +35,22 @@
 		
 
 		<div class="box" >
-			<div class="topic" >
 				<h2>ลำดับงาน :</h2>
-				<a-input 
-				class="boxInput"
-				placeholder="ลำดับงาน*"   
-				allow-clear 
-				v-model="taskList.name"/>
-			</div>
-			<div class="topic">
+					<a-input 
+					class="boxInput"
+					placeholder="ลำดับงาน*"   
+					allow-clear 
+					v-model="taskList.name"/>
+		
 				<h2>นัดตรวจ :</h2>
-				<a-date-picker 
-				class="boxDate"
-				@change="onChange"
-				:format="dateFormatList"
-				:disabled-date="disabledDate"
-				placeholder="นัดตรวจ*"
-				v-model="taskList.date"/>
-			</div>
+					<a-date-picker 
+					class="boxDate"
+					@change="onChange"
+					:format="dateFormatList"
+					:disabled-date="disabledDate"
+					placeholder="นัดตรวจ*"
+					v-model="taskList.date"/>
+			
         </div>
 		<div class="div-list">
 			<button 
@@ -157,9 +155,10 @@ export default {
 	margin: 0 0 28px 0;
 }
 .div-list{
+	width: 300px;
 	display: flex;
 	justify-content: flex-end;
-	padding: 0 24px;
+	padding: 0 32px;
 }
 .div-add{
 	display: flex;
@@ -174,20 +173,16 @@ export default {
 	height: 32px;
 }
 .box{
-	padding: 32px;
+	width: 300px;
+	padding: 32px 32px 14px 32px;
+}
+.box h2{
+	margin: 14px 0 0 0;
 }
 .box-list{
 	padding: 16px 18px;
 	box-shadow: 4px 4px 8px rgb(229,229,229);
 	margin: 0 24px 20px 24px;
-}
-.topic{
-	
-	margin: 0 0 10px 0;
-}
-.topic h2{
-	width: 80px;
-	height: 18px;
 }
 .boxInput{
 	width: 100%;
@@ -198,5 +193,25 @@ export default {
 }
 .boxDropdown{
 	width: 100%;
+}
+@media screen and (max-width: 1920px ) and (min-width: 768px ){
+.div-top{
+	width: 600px;
+	margin: 0 auto;
+}
+.box{
+	width: 600px;
+	margin: 0 auto;
+	padding: 32px 48px 14px 48px;
+}
+.div-list{
+	width: 600px;
+	margin: 0 auto;
+	padding: 0 48px;
+}
+.box-list{
+	width: 504px;
+	margin: 0 auto 20px auto;
+}
 }
 </style>

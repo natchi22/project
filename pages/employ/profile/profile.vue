@@ -64,4 +64,10 @@ export default {
 .form h2{
     margin: 0 0 0 16px;
 }
+@media screen and (max-width: 1920px ) and (min-width: 768px ){
+.body{
+    width: 800px;
+    margin: 0 auto;
+}
+}
 </style>
