@@ -17,7 +17,8 @@ export default {
     '~/style/style.css'
   ],
   plugins: [
-    '@/plugins/antd-ui'
+    '@/plugins/antd-ui',
+    '~/plugins/firebase'
   ],
   components: true,
   buildModules: [

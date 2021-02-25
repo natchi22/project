@@ -1,5 +1,6 @@
 <template>
         <div class="regis">
+            {{profile}}
             <div class="cover">
                 <!-- <img class="pic size-pic" src="../../assets/images/profile.jpg" alt="รูปโปรไฟล์"> -->
                 <img class="pic size-pic" :src="profile.pictureUrl" alt="รูปโปรไฟล์">  
@@ -23,9 +24,12 @@ import { mapState,mapMutations } from 'vuex'
 export default {
     computed: { //นำstoreไปใช้ วางไว้หน้าที่จะใช้ และเรียกใช้บนโค้ด **import mapState ด้วย   
 		...mapState({
-		profile: state => state.profile.profileData
-    })
+		    profile: state => state.profile.profileData
+        })
     },
+    methods(){
+        regist
+    }
 }
 </script>
 <style scoped>
