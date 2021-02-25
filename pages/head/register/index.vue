@@ -2,7 +2,7 @@
 	<div class="login">
 		<h1>สมัครสมาชิก</h1>
         <div class="div-pic">
-            <img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
+            <img class="pic size-pic" src="~/assets/images/profile.jpg" alt="รูปโปรไฟล์">
         </div>
         <h2>Username</h2>
 		<input type="user" placeholder="ชื่อผู้ใช้" v-model="user">
