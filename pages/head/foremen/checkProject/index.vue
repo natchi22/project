@@ -1,8 +1,9 @@
 <template>
     <div class="body">
         <div class="profile-head">
+            <h2>{{head.fName}} {{head.lName}}</h2>
 			<img class="pic size-pic" src="../../../../assets/images/profile.jpg" alt="รูปโปรไฟล์หัวหน้า">
-			<h2>{{head.fName}} {{head.lName}}</h2>
+			
 		</div>
         <div class="task-name">
             <h1>{{form.taskName}}</h1>
@@ -125,15 +126,10 @@ export default {
     justify-content: center;
     margin: 0 0 24px 0;
 }
-.profile-head{
-	display: flex;
-	flex-direction: row;
-	margin: 0 0 24px 0;
-}
 .size-pic{
     width: 30px;
 	height: 30px;
-	margin: 0 15px 0 0;
+	margin: 0 0 0 15px;
 }
 .size-pic-employ{
     width: 40px;
@@ -146,5 +142,8 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0 0 8px 0;
+}
+.status{
+    margin: 0 32px 20px 32px;
 }
 </style>

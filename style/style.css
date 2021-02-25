@@ -183,3 +183,14 @@ input{
     width: 250px;
 }
 /* กรอบสเต็ปงาน */
+/* หัวชื่อผู้จัดการ */
+.profile-head{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 0 0 24px 0;
+}
+.profile-head h2{
+	height: 18px;
+	margin-top: 6px;
+}

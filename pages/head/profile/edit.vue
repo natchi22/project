@@ -34,7 +34,23 @@ export default {
 </script>
 <style scoped>
 .size-pic{
+    display: flex;
+    justify-content: center;
     width: 80px;
     height: 80px;
+    margin: 0 auto 26px auto;
+}
+.div-btn{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 245px;
+}
+@media screen and (max-width: 1920px ) and (min-width: 768px ){
+.body{
+    width: 400px;
+    margin: 0 auto;
+}
 }
 </style>
