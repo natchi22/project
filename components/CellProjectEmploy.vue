@@ -36,10 +36,12 @@
                 </div>
             </div>
         </nuxt-link> 
-
-        <nuxt-link to="/employ/work">
-            <button class="btn btn-green" @click="summit">เพิ่มงาน</button>
-        </nuxt-link>
+        <div class="div-summit">
+            <nuxt-link to="/employ/work">
+                <button class="btn btn-green" @click="summit">เพิ่มงาน</button>
+            </nuxt-link>
+        </div>
+        
         
 	</div>
 </template>
@@ -81,13 +83,20 @@ h1{
     height: 80px;
 }
 .cover{
-    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 24px 0;
 }
 .head{
     display: flex;
+    justify-content: center;
     margin: 0 0 20px 0;
 }
 .btn{
     width: 180px;
+}
+.div-summit{
+    display: flex;
+    justify-content: center;
 }
 </style>

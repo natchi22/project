@@ -1,33 +1,38 @@
 <template>
-	<div class="body"> 
-		<h2>งาน</h2>
-		<a-input 
-			class="boxInput"
-			placeholder="ชื่อ Project*"    
-			v-model="form.taskName"
-		/>
+	<div class="body">
+		<div class="div-top">
+			<h2>งาน</h2>
+			<a-input 
+				class="boxInput"
+				placeholder="ชื่อ Project*"    
+				v-model="form.taskName"
+			/>
 
-		<h2>กำหนดส่งงาน</h2>
-		<a-date-picker 
-			class="boxDate"
-			@change="onChange"
-			placeholder="กำหนดส่ง Project*"
-			v-model="form.date"
-		/>
+			<h2>กำหนดส่งงาน</h2>
+			<a-date-picker 
+				class="boxDate"
+				@change="onChange"
+				placeholder="กำหนดส่ง Project*"
+				v-model="form.date"
+			/>
 
-		<h2>หัวหน้างาน</h2>
-		<a-dropdown-button>
-			หัวหน้างาน*
-			<a-menu slot="overlay" 
-				@click="handleMenuClick"
-				v-model="form.manager"
-			>
-				<a-menu-item key="1"> <a-icon type="user" />หัวหน้าคนที่่ 1</a-menu-item>
-				<a-menu-item key="2"> <a-icon type="user" />หัวหน้าคนที่ 2</a-menu-item>
-				<a-menu-item key="3"> <a-icon type="user" />หัวหน้าคนที่ 3</a-menu-item>
-			</a-menu>
-			<a-icon slot="icon" type="user" />
-		</a-dropdown-button>
+			<h2>หัวหน้างาน</h2>
+			<a-dropdown-button>
+				หัวหน้างาน*
+				<a-menu 
+					class="boxDropdown"
+					slot="overlay" 
+					@click="handleMenuClick"
+					v-model="form.manager"
+				>
+					<a-menu-item key="1"> <a-icon type="user" />หัวหน้าคนที่่ 1</a-menu-item>
+					<a-menu-item key="2"> <a-icon type="user" />หัวหน้าคนที่ 2</a-menu-item>
+					<a-menu-item key="3"> <a-icon type="user" />หัวหน้าคนที่ 3</a-menu-item>
+				</a-menu>
+				<a-icon slot="icon" type="user" />
+			</a-dropdown-button>
+		</div>
+		
 
 		<div class="box" >
 			<div class="topic" >
@@ -133,6 +138,16 @@ export default {
 }
 </script>
 <style scope>
+.body{
+	padding: 48px;
+}
+.div-top{
+	width: 300px;
+	padding: 0 18px;
+}
+.div-top h2{
+	margin: 14px 0 0 0;
+}
 .btn{
 	font-size: 12px;
 }
@@ -158,16 +173,13 @@ export default {
 	width: 180px;
 	height: 32px;
 }
-.boxDate{
-	width: 150px;
-}
 .box{
-	padding: 24px 24px 14px 24px;
+	padding: 32px;
 }
 .box-list{
 	padding: 16px 18px;
 	box-shadow: 4px 4px 8px rgb(229,229,229);
-	margin: 0 0 20px 0;
+	margin: 0 24px 20px 24px;
 }
 .topic{
 	
@@ -177,5 +189,14 @@ export default {
 	width: 80px;
 	height: 18px;
 }
-
+.boxInput{
+	width: 100%;
+	margin: 0;
+}
+.boxDate{
+	width: 100%;
+}
+.boxDropdown{
+	width: 100%;
+}
 </style>

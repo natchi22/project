@@ -1,5 +1,4 @@
 <template>
-	<div>
         <div class="regis">
             <div class="cover">
                 <!-- <img class="pic size-pic" src="../../assets/images/profile.jpg" alt="รูปโปรไฟล์"> -->
@@ -18,7 +17,6 @@
                 <button class="btn btn-green" @click="summit">ถัดไป</button>
             </nuxt-link>
 	    </div>
-	</div>
 </template>
 <script>
 import { mapState,mapMutations } from 'vuex'
@@ -44,7 +42,7 @@ h1{
     height: 80px;
 }
 .cover{
-    margin-bottom: 24px;
+    margin: 38px 0 24px 0;
 }
 .regis h2{
     font-size: 14px;
