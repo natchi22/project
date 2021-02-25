@@ -1,10 +1,11 @@
 <template>
     <div class="body">
 		<div class="profile-head">
+			<h2>ชื่อหัวหน้าใหญ่ เจ้าของ</h2>
 			<nuxt-link to="/head/profile">
 				<img class="pic size-pic" src="../../../assets/images/profile.jpg" alt="รูปโปรไฟล์">
 			</nuxt-link>
-			<h2>ชื่อหัวหน้าใหญ่ เจ้าของ</h2>
+			
 		</div>
 		<div class="tabs">
 			<a-alert
@@ -69,17 +70,12 @@ export default {
 .size-pic{
     width: 30px;
 	height: 30px;
-	margin: 0 15px 0 0;
-}
-.profile-head{
-	display: flex;
-	flex-direction: row;
-	margin: 0 0 24px 0;
+	margin: 0  0 0 15px;
 }
 .box{
     box-shadow: 4px 4px 8px rgb(229,229,229);
     padding: 24px;
-    margin: 0 0 20px 0;
+    margin: 0 10px 20px 10px;
 }
 .manager{
 	display: flex;

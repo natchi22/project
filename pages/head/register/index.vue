@@ -9,11 +9,11 @@
         <h2>Password</h2>
 		<input type="password" placeholder="รหัสผ่าน" v-model="password">
         <h2>ชื่อ</h2>
-        <input type="fName" placeholder="ชื่อ" v-model="user">
+        <input type="fName" placeholder="ชื่อ" v-model="fName">
         <h2>นามสกุล</h2>
-        <input type="lName" placeholder="นามสกุล" v-model="user">
+        <input type="lName" placeholder="นามสกุล" v-model="lName">
         <h2>เบอร์โทรศัพท์</h2>
-        <input type="telNumber" placeholder="เบอร์โทรศัพท์" v-model="user">
+        <input type="telNumber" placeholder="เบอร์โทรศัพท์" v-model="telNumber">
         <button class="btn btn-green" @click="register" >
             สมัครสมาชิก
         </button>

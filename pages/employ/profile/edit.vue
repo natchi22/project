@@ -44,7 +44,7 @@ export default {
 }
 @media screen and (max-width: 1920px ) and (min-width: 768px ){
 .body{
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
 }
 }
