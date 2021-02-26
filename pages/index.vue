@@ -74,43 +74,44 @@ export default {
 					this.name = name
 					this.image = image
 					this.saveProfile(profile)
-					if (params.get('page') === 'freelance'){
-						const getInfo = await this.$fireStore.collection("Freelance").where("lineId",'==',this.profile.userId ).get()
-						getInfo.forEach((doc)=>{
-							this.inforFrelance = doc.data()
-						}) 
-						if(this.inforFrelance.lineId && 
-							this.inforFrelance.firstName && 
-							this.inforFrelance.lastName && 
-							this.inforFrelance.phone)
-						{
-								const freelance = await this.$fireStore.collection("Freelance").where("lineId",'==',this.profile.userId ).get()
-								freelance.forEach((doc)=>{
-								this.freelanceData = doc.data()
-								})
+					console.log(this.profile,profile)
+					// if (params.get('page') === 'freelance'){
+					// 	const getInfo = await this.$fireStore.collection("Freelance").where("lineId",'==',this.profile.userId ).get()
+					// 	getInfo.forEach((doc)=>{
+					// 		this.inforFrelance = doc.data()
+					// 	}) 
+					// 	if(this.inforFrelance.lineId && 
+					// 		this.inforFrelance.firstName && 
+					// 		this.inforFrelance.lastName && 
+					// 		this.inforFrelance.phone)
+					// 	{
+					// 			const freelance = await this.$fireStore.collection("Freelance").where("lineId",'==',this.profile.userId ).get()
+					// 			freelance.forEach((doc)=>{
+					// 			this.freelanceData = doc.data()
+					// 			})
 
-							const dateTime = await this.$fireStore.collection("Task")
-							.where("freelanceId",'==',  this.freelanceData.freelanceId)
-							.where("status",'==',  false).get()
-							dateTime.forEach((doc)=>{
-								this.task = doc.data()
-							}) 
+					// 		const dateTime = await this.$fireStore.collection("Task")
+					// 		.where("freelanceId",'==',  this.freelanceData.freelanceId)
+					// 		.where("status",'==',  false).get()
+					// 		dateTime.forEach((doc)=>{
+					// 			this.task = doc.data()
+					// 		}) 
 
-							if (this.task !== null) {
-								this.$router.replace('/freelance/checkout')
-							}
-							else {
-								this.$router.replace('/freelance/checkin')
-							}
+					// 		if (this.task !== null) {
+					// 			this.$router.replace('/freelance/checkout')
+					// 		}
+					// 		else {
+					// 			this.$router.replace('/freelance/checkin')
+					// 		}
 							
-						}
-						else{
-							this.$router.replace('/freelance')
-						}
-					}
-					else if (params.get('page') === 'profile'){
-						this.$router.replace('/employ/project')
-					}
+					// 	}
+					// 	else{
+					// 		this.$router.replace('/freelance')
+					// 	}
+					// }
+					// else if (params.get('page') === 'profile'){
+					// 	this.$router.replace('/employ/project')
+					// }
 				// else if (params.get('page') === 'history'){
 				// 	this.$router.replace('/freelance/history')
 				// } 
