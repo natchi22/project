@@ -20,7 +20,7 @@
 </template>
 <script>
 import { db } from '~/plugins/firebase'
-import liff from '@line/liff'
+import { firestoreAutoId } from '~/constant/genId'
 import { mapState,mapMutations } from 'vuex'
 export default {
     computed: { //นำstoreไปใช้ วางไว้หน้าที่จะใช้ และเรียกใช้บนโค้ด **import mapState ด้วย   
@@ -38,8 +38,9 @@ export default {
     },
     methods:{
         submit(){
-            db.collection("Freelance").add({
-                freelanceId: docRef.id,
+            const id = firestoreAutoId()
+            db.collection("Freelance").doc(id).set({
+                freelanceId: id,
                 firstName: this.fName,
                 lastName: this.lName,
                 lindId: this.profile.userId,
