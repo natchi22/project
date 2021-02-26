@@ -36,9 +36,9 @@
                 </div>
             </div>
         </nuxt-link> 
-        <div class="div-summit">
+        <div class="div-submit">
             <nuxt-link to="/employ/work">
-                <button class="btn btn-green" @click="summit">เพิ่มงาน</button>
+                <button class="btn btn-green" @click="submit">เพิ่มงาน</button>
             </nuxt-link>
         </div>
         
@@ -48,7 +48,7 @@
 
 <script>
 export default {
-    
+
     data(){
         return{
             fName: 'จิรัชญา',
@@ -58,6 +58,11 @@ export default {
             dateEnd: '01/02/2021',
         }
     },
+    methods:{
+        submit(){
+
+        }
+    }
 }
 </script>
 
@@ -99,7 +104,7 @@ h1{
 .btn{
     width: 180px;
 }
-.div-summit{
+.div-submit{
     display: flex;
     justify-content: center;
 }

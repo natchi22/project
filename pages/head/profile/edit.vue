@@ -14,7 +14,7 @@
         <!-- บันทึกข้้อมูลส่วนตัว ไปหน้าแรก ของตัวเอง -->
         <nuxt-link to="/head/profile/boss">
             <div class="div-btn">
-                <button class="btn btn-green" @click="summit">บันทึก</button>
+                <button class="btn btn-green" @click="submit">บันทึก</button>
             </div> 
         </nuxt-link>
 	</div>

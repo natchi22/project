@@ -11,7 +11,7 @@
         <input type="text" placeholder="E-mail*" v-model="email">
         <div class="div-btn">
 
-                <button class="btn btn-green" @click="summit">บันทึก</button>
+                <button class="btn btn-green" @click="submit">บันทึก</button>
         </div> 
 	</div>
 </template>

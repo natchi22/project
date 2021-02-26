@@ -1,6 +1,5 @@
 <template>
         <div class="regis">
-            {{profile}}
             <div class="cover">
                 <!-- <img class="pic size-pic" src="../../assets/images/profile.jpg" alt="รูปโปรไฟล์"> -->
                 <img class="pic size-pic" :src="profile.pictureUrl" alt="รูปโปรไฟล์">  
@@ -15,11 +14,13 @@
             <h2>E-mail</h2>
             <input type="text" placeholder="E-mail*" v-model="email">
             <nuxt-link to="/employ/profile">
-                <button class="btn btn-green" @click="summit">ถัดไป</button>
+                <button class="btn btn-green" @click="submit">ถัดไป</button>
             </nuxt-link>
 	    </div>
 </template>
 <script>
+import { db } from '~/plugins/firebase'
+import liff from '@line/liff'
 import { mapState,mapMutations } from 'vuex'
 export default {
     computed: { //นำstoreไปใช้ วางไว้หน้าที่จะใช้ และเรียกใช้บนโค้ด **import mapState ด้วย   
@@ -27,9 +28,32 @@ export default {
 		    profile: state => state.profile.profileData
         })
     },
-    methods(){
-        regist
-    }
+    data(){
+        return{
+            fName: '',
+            lName: '',
+            telNumber: '',
+            email: ''
+        }
+    },
+    methods:{
+        submit(){
+            db.collection("Freelance").add({
+                freelanceId: docRef.id,
+                firstName: this.fName,
+                lastName: this.lName,
+                lindId: this.profile.userId,
+                phone: this.telNumber,
+                pictureUrl: this.profile.image
+            })
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
+        }
+    },
 }
 </script>
 <style scoped>
