@@ -1,5 +1,6 @@
 <template>
         <div class="regis">
+            {{ profile }}
             <div class="cover">
                 <!-- <img class="pic size-pic" src="../../assets/images/profile.jpg" alt="รูปโปรไฟล์"> -->
                 <img class="pic size-pic" :src="profile.pictureUrl" alt="รูปโปรไฟล์">  
