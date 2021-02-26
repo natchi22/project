@@ -27,22 +27,24 @@
 import liff from '@line/liff'
 import { mapState,mapMutations } from 'vuex'
 export default {
-  	// data () {
-    // 	return {
-	// 		image: '',
-	// 		name:'',
-	// 		userId:'',   
+  	data () {
+    	return {
+			image: '',
+			name:'',
+			userId:'',   
 			
-	// 		inforFrelance:{},
-    //         freelanceData:'',
-    //         fName: '',
-    //         lName: '',
-    //         telNumber: '',
-    //         lineId: '',
-    //         task:null,
+			inforFrelance:{
+				
+			},
+            freelanceData:'',
+            fName: '',
+            lName: '',
+            telNumber: '',
+            lineId: '',
+            task:null,
 
-	// 	}
-	// },
+		}
+	},
 	computed: { //นำstoreไปใช้ วางไว้หน้าที่จะใช้ และเรียกใช้บนโค้ด **import mapState ด้วย   
 		...mapState({
 		profile: state => state.profile.profileData
@@ -55,17 +57,17 @@ export default {
 	},
  	async mounted () {
     	const data = {
-      	img : this.image,
-      	id : this.userId,
-     	name : this.name
-	}
-	
+			img : this.image,
+			id : this.userId,
+			name : this.name
+		}
     liff.init({ liffId: '1655688087-NzP8r7n2' })
       	.then(() => {
         	if (liff.isLoggedIn()) {
 				const queryString = decodeURIComponent(window.location.search).replace("?liff.state=", "")
                 const params = new URLSearchParams(queryString)
           		liff.getProfile().then(async (profile) => { 
+					console.log(profile)
 					const userId = profile.userId ///เอาuser id line จากที่ได้ตรงนี้ไปเก็บใน firestore get เข้าไปพร้อมกับหน้าfreelance index
 					const image = profile.pictureUrl
 					const name = profile.displayName
